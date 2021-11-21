@@ -48,13 +48,13 @@ function draw() {
   width = windowWidth;
   height = windowHeight;
   cursor('default');
-  if(mouseX >= width / 3.2 - (width / 8 / 2) && mouseX <= width / 3.2 + (width / 8 / 2) && mouseY >= height / 1.33 - (width / 17 / 2) && mouseY <= height / 1.33 + width / 17 / 2) {
+  if(mouseX >= width / 3.2 - width / 18 && mouseX <= width / 3.2 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
     cursor('not-allowed');
   }
-  if(mouseX >= width / 2 - (width / 6 / 2) && mouseX <= width / 2 + (width / 6 / 2) && mouseY >= height / 1.33 - (width / 17 / 2) && mouseY <= height / 1.33 + width / 17 / 2) {
+  if(mouseX >= width / 2 - width / 18 && mouseX <= width / 2 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
     cursor('not-allowed');
   }
-  if(mouseX >= width / 1.5 - (width / 7 / 2) && mouseX <= width / 1.5 + (width / 7 / 2) && mouseY >= height / 1.33 - (width / 17 / 2) && mouseY <= height / 1.33 + width / 17 / 2) {
+  if(mouseX >= width / 1.5 - width / 18 && mouseX <= width / 1.5 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
     cursor('not-allowed');
   }
 }
