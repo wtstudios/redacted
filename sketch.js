@@ -1,11 +1,11 @@
-let logo, survivr1, menurect, battleicon, roboto, menugun, backgimg, bush1, bush2, bush3, tree1, tree2, tree3, acacia;
+let status, logo, survivr1, menurect, battleicon, roboto, menugun, backgimg, bush1, bush2, bush3, tree1, tree2, tree3, acacia, stone, barrel;
 function preload() {
   logo = loadImage('Survivlogo.png');
   survivr1 = loadImage('https://surviv.io/img/gui/loadout-player-icon.svg');
   menurect = loadImage('rect.png');
   battleicon = loadImage('https://surviv.io/img/gui/emote.svg');
   roboto = loadFont('RobotoCondensed-Bold.ttf');
-  menugun = loadImage('project.png');
+  menugun = loadImage('loot-perk-firepower.png');
   backgimg = loadImage('https://surviv.io/img/main_splash.jpg');
   bush1 = loadImage('https://static.wikia.nocookie.net/survivio/images/6/69/Map-bush-01.png/revision/latest/scale-to-width-down/600?cb=20180622141749');
   bush2 = loadImage('https://static.wikia.nocookie.net/survivio/images/c/c6/Map-bush-07-0.png/revision/latest/scale-to-width-down/180?cb=20181203124424');
@@ -14,6 +14,8 @@ function preload() {
   tree1 = loadImage('https://static.wikia.nocookie.net/survivio/images/2/25/Obstacle-tree-01.png/revision/latest/scale-to-width-down/700?cb=20191002105944');
   tree2 = loadImage('https://static.wikia.nocookie.net/survivio/images/1/18/Obstacle-tree-03sv.png/revision/latest/scale-to-width-down/699?cb=20200220085833');
   tree3 = loadImage('https://static.wikia.nocookie.net/survivio/images/1/11/Woods_Red_Tree.png/revision/latest/scale-to-width-down/700?cb=20201219170606');
+  stone = loadImage('https://static.wikia.nocookie.net/survivio/images/c/c1/Map-stone-01.png/revision/latest/scale-to-width-down/700?cb=20180327172808');
+  barrel = loadImage('https://static.wikia.nocookie.net/survivio/images/3/39/Map-barrel-01.png/revision/latest/scale-to-width-down/700?cb=20180327172838');
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
