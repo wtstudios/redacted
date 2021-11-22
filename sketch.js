@@ -42,7 +42,7 @@ function draw() {
   textAlign(CENTER);
   fill(255);
   textFont(jura);
-  text('5v5', width / 2, height / 3);
+  text('5v5', width / 2, height / 2.8);
   textFont(roboto);
   rectMode(CENTER);
   fill(131, 150, 80);
