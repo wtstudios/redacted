@@ -32,7 +32,29 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   status = 'menu1';
 }
-
+var button = function(x, y, w, h, t, s, a) {
+  textAlign(CENTER);
+  fill(131, 140, 80);
+  rect(x, y + 3, w, h, 5);
+  fill(131, 175, 80);
+  if(mouseX >= x - w / 2 && mouseX <= x + w / 2 && mouseY >= y - h / 2 && mouseY <= y + h / 2) {
+    if(a === false) {
+      cursor('not-allowed');
+    }
+    if(a === true) {
+      cursor('pointer');
+    }
+    fill(131, 140, 80);
+    }
+    rect(x, y, w, h, 5);
+    textFont(roboto);
+    textSize(width / 40);
+    fill(255);
+    text(t, x, y + h / 4);
+    if(mouseIsPressed && mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h && a === true) {
+      status = s;
+    }
+}
 function draw() {
   background(0);
   noStroke();
@@ -48,39 +70,10 @@ function draw() {
     textAlign(CENTER);
     textFont(roboto);
     rectMode(CENTER);
-    fill(131, 140, 80);
-    rect(width / 3.2, height / 1.32 + 3, width / 9, width / 25, 5);
-    fill(131, 175, 80);
-    if(mouseX >= width / 3.2 - width / 18 && mouseX <= width / 3.2 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
-      cursor('not-allowed');
-      fill(131, 140, 80);
-    }
-    rect(width / 3.2, height / 1.32, width / 9, width / 25, 5);
-    fill(131, 140, 80);
-    rect(width / 2, height / 1.32 + 3, width / 9, width / 25, 5);
-    fill(131, 175, 80);
-    if(mouseX >= width / 2 - width / 18 && mouseX <= width / 2 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
-      cursor('not-allowed');
-      fill(131, 140, 80);
-    }
-    rect(width / 2, height / 1.32, width / 9, width / 25, 5);
-    fill(131, 140, 80);
-    rect(width / 1.5, height / 1.32 + 3, width / 9, width / 25, 5);
-    fill(131, 175, 80);
-    if(mouseX >= width / 1.5 - width / 18 && mouseX <= width / 1.5 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
-      cursor('pointer');
-      fill(131, 140, 80);
-    }
-    rect(width / 1.5, height / 1.32, width / 9, width / 25, 5);
-    textSize(width / 40);
-    fill(255);
-    text('Battle', width / 3.2, height / 1.3);
-    text('Weapons', width / 2, height / 1.3);
-    text('Loadout', width / 1.5, height / 1.3);
+    button(width / 3.2, height / 1.32, width / 9, width / 25, "Battle", 'gameoptions', false);
+    button(width / 2, height / 1.32, width / 9, width / 25, "Weapons", 'weaponmenu1', false);
+    button(width / 1.5, height / 1.32, width / 9, width / 25, "Loadout", 'loadoutmenu', true);
   }
-      if(mouseIsPressed && mouseX >= width / 1.5 - width / 18 && mouseX <= width / 1.5 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50 && status === 'menu1') {
-      status = 'loadoutmenu';
-    }
   width = windowWidth;
   height = windowHeight;
 }
