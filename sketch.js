@@ -34,48 +34,53 @@ function setup() {
 }
 
 function draw() {
-  cursor('default');
-  noStroke();
   background(0);
+  noStroke();
   imageMode(CENTER);
   image(backgimg, width / 2, height / 2, width * 1.6, width / 1);
-  image(logo, width / 2, height / 5, width / 3, width / 7);
-  image(menurect, width / 1.95, height / 1.4, height / 1.2, height / 1.5);
-  image(battleicon, width / 3.2, height / 1.6, (height + width) / 20, (height + width) / 20);
-  image(menugun, width / 2, height / 1.6, (height + width) / 20, (height + width) / 20);
-  image(survivr1, width / 1.5, height / 1.6, (height + width) / 20, (height + width) / 20);
-  textAlign(CENTER);
-  textFont(roboto);
-  rectMode(CENTER);
-  fill(131, 140, 80);
-  rect(width / 3.2, height / 1.32 + 3, width / 9, width / 25, 5);
-  fill(131, 175, 80);
-  if(mouseX >= width / 3.2 - width / 18 && mouseX <= width / 3.2 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
-    cursor('not-allowed');
+  cursor('default');
+  if(status === 'menu1') {
+    image(logo, width / 2, height / 5, width / 3, width / 7);
+    image(menurect, width / 1.95, height / 1.4, width / 1.5, height / 1.5);
+    image(battleicon, width / 3.2, height / 1.6, (height + width) / 20, (height + width) / 20);
+    image(menugun, width / 2, height / 1.6, (height + width) / 20, (height + width) / 20);
+    image(survivr1, width / 1.5, height / 1.6, (height + width) / 20, (height + width) / 20);
+    textAlign(CENTER);
+    textFont(roboto);
+    rectMode(CENTER);
     fill(131, 140, 80);
-  }
-  rect(width / 3.2, height / 1.32, width / 9, width / 25, 5);
-  fill(131, 140, 80);
-  rect(width / 2, height / 1.32 + 3, width / 9, width / 25, 5);
-  fill(131, 175, 80);
-  if(mouseX >= width / 2 - width / 18 && mouseX <= width / 2 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
-    cursor('not-allowed');
+    rect(width / 3.2, height / 1.32 + 3, width / 9, width / 25, 5);
+    fill(131, 175, 80);
+    if(mouseX >= width / 3.2 - width / 18 && mouseX <= width / 3.2 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
+      cursor('not-allowed');
+      fill(131, 140, 80);
+    }
+    rect(width / 3.2, height / 1.32, width / 9, width / 25, 5);
     fill(131, 140, 80);
-  }
-  rect(width / 2, height / 1.32, width / 9, width / 25, 5);
-  fill(131, 140, 80);
-  rect(width / 1.5, height / 1.32 + 3, width / 9, width / 25, 5);
-  fill(131, 175, 80);
-  if(mouseX >= width / 1.5 - width / 18 && mouseX <= width / 1.5 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
-    cursor('pointer');
+    rect(width / 2, height / 1.32 + 3, width / 9, width / 25, 5);
+    fill(131, 175, 80);
+    if(mouseX >= width / 2 - width / 18 && mouseX <= width / 2 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
+      cursor('not-allowed');
+      fill(131, 140, 80);
+    }
+    rect(width / 2, height / 1.32, width / 9, width / 25, 5);
     fill(131, 140, 80);
+    rect(width / 1.5, height / 1.32 + 3, width / 9, width / 25, 5);
+    fill(131, 175, 80);
+    if(mouseX >= width / 1.5 - width / 18 && mouseX <= width / 1.5 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50) {
+      cursor('pointer');
+      fill(131, 140, 80);
+    }
+    rect(width / 1.5, height / 1.32, width / 9, width / 25, 5);
+    textSize(width / 40);
+    fill(255);
+    text('Battle', width / 3.2, height / 1.3);
+    text('Weapons', width / 2, height / 1.3);
+    text('Loadout', width / 1.5, height / 1.3);
   }
-  rect(width / 1.5, height / 1.32, width / 9, width / 25, 5);
-  textSize(width / 40);
-  fill(255);
-  text('Battle', width / 3.2, height / 1.3);
-  text('Weapons', width / 2, height / 1.3);
-  text('Loadout', width / 1.5, height / 1.3);
+      if(mouseIsPressed && mouseX >= width / 1.5 - width / 18 && mouseX <= width / 1.5 + width / 18 && mouseY >= height / 1.32 - width / 50 && mouseY <= height / 1.32 + width / 50 && status === 'menu1') {
+      status = 'loadoutmenu';
+    }
   width = windowWidth;
   height = windowHeight;
 }
