@@ -38,7 +38,7 @@ function draw() {
   image(battleicon, width / 3.2, height / 1.6, (height + width) / 20, (height + width) / 20);
   image(menugun, width / 2, height / 1.6, (height + width) / 20, (height + width) / 20);
   image(survivr1, width / 1.5, height / 1.6, (height + width) / 20, (height + width) / 20);
-  textSize(height / 14);
+  textSize(width / 16);
   textAlign(CENTER);
   fill(255);
   textFont(jura);
