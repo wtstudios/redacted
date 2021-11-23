@@ -1,4 +1,4 @@
-let status, logo, survivr1, menurect, battleicon, roboto,jura, menugun, backgimg, bush1, bush2, bush3, tree1, tree2, tree3, acacia, stone, barrel, table1, table2, table3, visorred, visorblue, helmet, forestcamobase, snowcamobase, urbancamobase, desertcamo, mp5loot, mp5world, m1a1loot, m1a1world, auth;
+let status, logo, survivr1, menurect, battleicon, roboto,jura, menugun, backgimg, bush1, bush2, bush3, tree1, tree2, tree3, acacia, stone, barrel, table1, table2, table3, visorred, visorblue, helmet, forestcamobase, snowcamobase, urbancamobase, desertcamo, mp5loot, mp5world, m1a1loot, m1a1world, ak74loot, ak74world, auth;
 function preload() {
   logo = loadImage('surviv_logo_full.png');
   survivr1 = loadImage('https://surviv.io/img/gui/loadout-player-icon.svg');
@@ -51,7 +51,7 @@ var button = function(x, y, w, h, t, s, a) {
     textSize(width / 40);
     fill(255);
     text(t, x, y + h / 4);
-    if(mouseIsPressed && mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h && a === true) {
+    if(mouseIsPressed && mouseX >= x - w / 2 && mouseX <= x + w / 2 && mouseY >= y - h / 2 && mouseY <= y + h / 2 && a === true) {
       status = s;
     }
 }
