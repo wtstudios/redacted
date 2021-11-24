@@ -63,7 +63,7 @@ function draw() {
   cursor('default');
   if(status === 'menu1') {
     image(logo, width / 2, height / 5, width / 3, width / 7);
-    image(menurect, width / 1.95, height / 1.4, width / 1.5, height / 1.5);
+    image(menurect, width / 2, height / 1.4, width / 1.8, height / 2);
     image(battleicon, width / 3.2, height / 1.6, (height + width) / 20, (height + width) / 20);
     image(menugun, width / 2, height / 1.6, (height + width) / 20, (height + width) / 20);
     image(survivr1, width / 1.5, height / 1.6, (height + width) / 20, (height + width) / 20);
@@ -73,6 +73,15 @@ function draw() {
     button(width / 3.2, height / 1.32, width / 9, width / 25, "Battle", 'gameoptions', false);
     button(width / 2, height / 1.32, width / 9, width / 25, "Weapons", 'weaponmenu1', false);
     button(width / 1.5, height / 1.32, width / 9, width / 25, "Loadout", 'loadoutmenu', true);
+  }
+  if(status === 'loadoutmenu') {
+    textFont(roboto);
+    imageMode(CENTER);
+    image(menurect, width / 2.8, height / 1.8, width / 2, height / 1.4);
+    image(menurect, width / 2.8 , height / 1.6, width / 2.15, height / 1.85);
+    image(menurect, width / 1.3, height / 2.5, width / 5, width / 5);
+    textSize(width / 20);
+    text('Backpack skins', width / 2.9, height / 3.4);
   }
   width = windowWidth;
   height = windowHeight;
