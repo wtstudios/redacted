@@ -1,4 +1,4 @@
-let status, logo, survivr1, menurect, battleicon, roboto,jura, menugun, backgimg, bush1, bush2, bush3, tree1, tree2, tree3, acacia, stone, barrel, table1, table2, table3, visorred, visorblue, helmet, forestcamobase, snowcamobase, urbancamobase, desertcamo, mp5loot, mp5world, m1a1loot, m1a1world, ak74loot, ak74world, auth;
+let status, logo, survivr1, menurect, battleicon, roboto,jura, menugun, backgimg, bush1, bush2, bush3, tree1, tree2, tree3, acacia, stone, barrel, table1, table2, table3, visorred, visorblue, helmet, forestcamobase, snowcamobase, urbancamobase, desertcamo, mp5loot, mp5world, m1a1loot, m1a1world, ak74loot, ak74world, meleeimage = [], auth, skinrect, meleename;
 function preload() {
   logo = loadImage('surviv_logo_full.png');
   survivr1 = loadImage('https://surviv.io/img/gui/loadout-player-icon.svg');
@@ -7,6 +7,7 @@ function preload() {
   roboto = loadFont('RobotoCondensed-Bold.ttf');
   jura = loadFont('Jura-Bold.ttf');
   menugun = loadImage('loot-perk-firepower.png');
+  skinrect = loadImage('rect2.png');
   backgimg = loadImage('https://surviv.io/img/main_splash.jpg');
   bush1 = loadImage('https://static.wikia.nocookie.net/survivio/images/6/69/Map-bush-01.png/revision/latest/scale-to-width-down/600?cb=20180622141749');
   bush2 = loadImage('https://static.wikia.nocookie.net/survivio/images/c/c6/Map-bush-07-0.png/revision/latest/scale-to-width-down/180?cb=20181203124424');
@@ -27,6 +28,8 @@ function preload() {
   snowcamobase = loadImage('https://static.wikia.nocookie.net/survivio/images/1/10/Player-base-outfitSpetsnaz.png/revision/latest/scale-to-width-down/140?cb=20200705015519');
   urbancamobase = loadImage('https://static.wikia.nocookie.net/survivio/images/9/9b/Player-base-outfitUrbanCamo.png/revision/latest/scale-to-width-down/141?cb=20200705020024');
   desertcamobase = loadImage('https://static.wikia.nocookie.net/survivio/images/5/5a/Player-base-outfitWheat.png/revision/latest/scale-to-width-down/140?cb=20200705020032');
+  meleename = ['Bayonet Rugged', 'Bayonet Woodland', 'Karambit Rugged', 'Karambit Prismatic', 'Karambit Drowned', 'Huntsman Rugged', 'Huntsman Burnished', 'Bowie Vintage', 'Bowie Frontier'];
+  meleeimage = [loadImage('https://static.wikia.nocookie.net/survivio/images/1/16/Loot-melee-bayonet-rugged.png/revision/latest/scale-to-width-down/683?cb=20180728112205'), loadImage('https://static.wikia.nocookie.net/survivio/images/b/bf/Loot-melee-bayonet-woodland.png/revision/latest/scale-to-width-down/310?cb=20200309192949'), loadImage('https://static.wikia.nocookie.net/survivio/images/5/58/Loot-melee-karambit-rugged.png/revision/latest/scale-to-width-down/683?cb=20180728111726'), loadImage('https://static.wikia.nocookie.net/survivio/images/e/e6/Loot-melee-karambit-prismatic.png/revision/latest/scale-to-width-down/683?cb=20180728111758'), loadImage('https://static.wikia.nocookie.net/survivio/images/6/67/Loot-melee-karambit-drowned.png/revision/latest/scale-to-width-down/683?cb=20180908105848'), loadImage('https://static.wikia.nocookie.net/survivio/images/3/3c/Loot-melee-huntsman-rugged.png/revision/latest/scale-to-width-down/683?cb=20180728111410'), loadImage('https://static.wikia.nocookie.net/survivio/images/3/3c/Loot-melee-huntsman-burnished.png/revision/latest/scale-to-width-down/683?cb=20180728111446'), loadImage('https://static.wikia.nocookie.net/survivio/images/a/a5/Loot-melee-bowie-vintage.png/revision/latest/scale-to-width-down/683?cb=20180927030752'), loadImage('https://static.wikia.nocookie.net/survivio/images/9/94/Loot-melee-bowie-frontier.png/revision/latest/scale-to-width-down/683?cb=20180927030814')];
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -77,11 +80,22 @@ function draw() {
   if(status === 'loadoutmenu') {
     textFont(roboto);
     imageMode(CENTER);
-    image(menurect, width / 2.8, height / 1.8, width / 2, height / 1.4);
+    image(menurect, width / 2.8, height / 1.65, width / 2, height / 1.4);
     image(menurect, width / 2.8 , height / 1.6, width / 2.15, height / 1.85);
     image(menurect, width / 1.3, height / 2.5, width / 5, width / 5);
-    textSize(width / 20);
-    text('Backpack skins', width / 2.9, height / 3.4);
+    textSize(width / 30);
+    text('Melee skins', width / 2.9, height / 3.1);
+    imageMode(CORNER)
+    for(var i = 0; i < meleename.length; i++) {
+      var meleeskinx = i;
+      var meleeskiny = 1;
+      if(meleeskinx > 3) {
+        meleeskinx -= 4;
+        meleeskiny ++;
+      }
+      image(skinrect, meleeskinx * width / 10 + width / 6, meleeskiny * width / 10 + width / 5, width / 12, width / 12)
+      image(meleeimage[i], meleeskinx * width / 10 + width / 6, meleeskiny * width / 10 + width / 5, width / 12, width / 12)
+    }
   }
   width = windowWidth;
   height = windowHeight;
