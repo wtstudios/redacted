@@ -84,6 +84,7 @@ function draw() {
     image(menurect, width / 2.8, height / 1.65, width / 2, height / 1.4);
     image(menurect, width / 2.8 , height / 1.6, width / 2.15, height / 1.85);
     image(menurect, width / 1.3, height / 2.5, width / 5, width / 5);
+    fill(255);
     textSize(width / 30);
     text('Melee skins', width / 2.9, height / 3.1);
     imageMode(CORNER)
@@ -98,16 +99,16 @@ function draw() {
         meleeskinx -= 4;
         meleeskiny++;
       }
-      image(skinrect, meleeskinx * width / 10 + width / 6, meleeskiny * height / 7.5 + height / 3.9, width / 12, width / 12);
+      image(skinrect, meleeskinx * width / 10 + width / 6, meleeskiny * (height + width )/ 20 + height / 3.9, (width + height) / 25, (width + height) / 25);
       noFill();
       stroke(50);
       rectMode(CORNER);
       strokeWeight(3);
-      rect(meleeskinx * width / 10 + width / 6, meleeskiny * height / 7.5 + height / 3.9, width / 12, width / 12);
+      rect(meleeskinx * width / 10 + width / 6, meleeskiny * (height + width )/ 20 + height / 3.9, (width + height) / 25, (width + height) / 25);
       strokeWeight(2);
-      rect(meleeskinx * width / 10 + width / 6, meleeskiny * height / 7.5 + height / 3.9, width / 48, width / 48);
-      image(meleestyle, meleeskinx * width / 10 + width / 6, meleeskiny * height / 7.5 + height / 3.9, width / 48, width / 48);
-      image(meleeimage[i], meleeskinx * width / 10 + width / 6, meleeskiny * height / 7.5 + height / 3.9, width / 12, width / 12);
+      rect(meleeskinx * width / 10 + width / 6, meleeskiny * (height + width )/ 20 + height / 3.9, width / 48, width / 48);
+      image(meleestyle, meleeskinx * width / 10 + width / 6, meleeskiny * (height + width )/ 20 + height / 3.9, width / 65, width / 65);
+      image(meleeimage[i], meleeskinx * width / 10 + width / 6, meleeskiny * (height + width ) / 20 + height / 3.9, (width + height) / 25, (width + height) / 25);
     }
   }
   width = windowWidth;
